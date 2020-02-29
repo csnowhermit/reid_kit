@@ -278,9 +278,9 @@ if __name__ == '__main__':
     y_err['val'] = []
 
     x_epoch = []    # 训练轮数
-    # fig = plt.figure()    # 准备绘制loss曲线
-    # ax0 = fig.add_subplot(121, title="loss")
-    # ax1 = fig.add_subplot(122, title="top1err")
+    fig = plt.figure()    # 准备绘制loss曲线
+    ax0 = fig.add_subplot(121, title="loss")
+    ax1 = fig.add_subplot(122, title="top1err")
 
     '''
         绘制loss曲线
@@ -288,14 +288,14 @@ if __name__ == '__main__':
     '''
     def draw_curve(current_epoch):
         x_epoch.append(current_epoch)
-        # ax0.plot(x_epoch, y_loss['train'], 'bo-', label='train')
-        # ax0.plot(x_epoch, y_loss['val'], 'ro-', label='val')
-        # ax1.plot(x_epoch, y_err['train'], 'bo-', label='train')
-        # ax1.plot(x_epoch, y_err['val'], 'ro-', label='val')
-        # if current_epoch == 0:
-        #     ax0.legend()
-        #     ax1.legend()
-        # fig.savefig(os.path.join('./model', name, 'train.jpg'))
+        ax0.plot(x_epoch, y_loss['train'], 'bo-', label='train')
+        ax0.plot(x_epoch, y_loss['val'], 'ro-', label='val')
+        ax1.plot(x_epoch, y_err['train'], 'bo-', label='train')
+        ax1.plot(x_epoch, y_err['val'], 'ro-', label='val')
+        if current_epoch == 0:
+            ax0.legend()
+            ax1.legend()
+        fig.savefig(os.path.join('./model', name, 'train.jpg'))
 
     '''
         保存模型
