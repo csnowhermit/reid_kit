@@ -107,5 +107,7 @@ ENV/
 
 .idea/
 
+*.mat
+pytorch_result.mat
 model/ft_ResNet50_20200205/
 model/ft_ResNet50_simple/
